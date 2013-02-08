@@ -2,9 +2,15 @@ var express = require('express')
   , app = express()
   , http = require('http')
   , server = http.createServer(app)
-  , io = require('socket.io').listen(server);
+  , io = require('socket.io').listen(server)
+  , port = '8080';
 
-server.listen(8080);
+if (process.env.PORT) {
+   port = process.env.PORT;
+}
+
+server.listen(port);
+console.log('server listening on port ' + port);
 
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');

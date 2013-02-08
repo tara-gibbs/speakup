@@ -1,0 +1,12 @@
+{
+  "name" : "speakup",
+  "description" : "A little node.js app to let you visually indicate when meeting presenters are too quiet.",
+  "homepage" : "https://github.com/tara-gibbs/speakup",
+  "keywords" : ["speakup", "realtime"],
+  "author" : "Tara Gibbs <tara.gibbs@gmail.com>",
+  "dependencies": {
+      "express": ">=3.0.0",
+      "socket.io" : ">=0.8.3"
+  },
+  "version" : "0.0.1"
+}
