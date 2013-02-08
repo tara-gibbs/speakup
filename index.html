@@ -13,15 +13,15 @@
   var socket = io.connect();
   socket.on('connect', function () {
     $('h2').fadeOut();
-    $('h1').fadeIn().fitText(.5).click(function(e) {
+    $('h1').fadeIn().fitText(.5).unbind('click').click(function(e) {
       $('h1').effect("highlight", {color: '#FF1A00'}, 3000);
       e.preventDefault();
       socket.emit('speakup');
     });
-    socket.on('flash_speakup', function () {
-     $('h1').effect("highlight", {color: '#FF1A00'}, 3000);
-    });
   });
+  socket.on('flash_speakup', function () {
+    $('h1').effect("highlight", {color: '#FF1A00'}, 3000);
+   });
 </script>
 </head>
   <body>
