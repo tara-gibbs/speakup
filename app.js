@@ -22,6 +22,5 @@ app.use('/css', express.static(__dirname + "/css"));
 io.sockets.on('connection', function (socket) {
   socket.on('speakup', function (data) {
     socket.broadcast.emit('flash_speakup');
-    socket.emit('flash_speakup');
   });
 });

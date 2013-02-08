@@ -12,7 +12,9 @@
 <script>
   var socket = io.connect();
   socket.on('connect', function () {
-    $('h1').click(function(e) {
+    $('h2').fadeOut();
+    $('h1').fadeIn().fitText(.5).click(function(e) {
+      $('h1').effect("highlight", {color: '#FF1A00'}, 3000);
       e.preventDefault();
       socket.emit('speakup');
     });
@@ -23,9 +25,7 @@
 </script>
 </head>
   <body>
-    <h1>SpeakUp!</h1>
-    <script>
-    $('h1').fitText(.5);
-    </script>
+    <h1 style="display: none">SpeakUp!</h1>
+    <h2>Connecting...</h2>
   </body>
 </html>
